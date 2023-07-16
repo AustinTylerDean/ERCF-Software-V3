@@ -5,7 +5,7 @@
 # Copyright (C) 2022  moggieuk#6538 (discord) moggieuk@hotmail.com
 #
 KLIPPER_HOME="${HOME}/klipper"
-KLIPPER_CONFIG_HOME="${HOME}/printer_data/config"
+KLIPPER_CONFIG_HOME="${HOME}/printer_1_data/config"
 OLD_KLIPPER_CONFIG_HOME="${HOME}/klipper_config"
 
 declare -A PIN 2>/dev/null || {
@@ -74,7 +74,7 @@ verify_not_root() {
 }
 
 check_klipper() {
-    if [ "$(sudo systemctl list-units --full -all -t service --no-legend | grep -F "klipper.service")" ]; then
+    if [ "$(sudo systemctl list-units --full -all -t service --no-legend | grep -F "klipper1.service")" ]; then
         echo -e "${INFO}Klipper service found"
     else
         echo -e "${ERROR}Klipper service not found! Please install Klipper first"
